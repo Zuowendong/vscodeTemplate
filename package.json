@@ -1,0 +1,50 @@
+{
+    "name": "vue-folder-template",
+    "displayName": "Vue Folder Template",
+    "description": "vue-folder-template",
+    "publisher": "zuowendong",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.65.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:vue-folder-template.helloWorld"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "vue-folder-template.helloWorld",
+                "title": "新建Vue文件夹模板"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "vue-folder-template.helloWorld",
+                    "group": "navigation",
+                    "when": "explorerResourceIsFolder"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.65.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.0",
+        "@types/node": "14.x",
+        "eslint": "^8.9.0",
+        "glob": "^7.2.0",
+        "mocha": "^9.2.1",
+        "typescript": "^4.5.5",
+        "@vscode/test-electron": "^2.1.2"
+    }
+}
